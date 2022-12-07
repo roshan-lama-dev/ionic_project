@@ -1,12 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tab4</ion-title>
+    <ion-title>Search Car</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item><h5>{{message}}</h5></ion-item>
-  <ion-item><h3>Please use the form below to search for cars</h3></ion-item>
+  <ion-item class="add-message">{{message}}</ion-item>
+
+  <ion-button color="danger" size="small" (click)="displayHelp()"
+    ><ion-icon slot="icon-only" name="help"></ion-icon>Help</ion-button
+  >
+
+  <ion-item
+    ><h3>
+      Please use the form below to search for cars using rego number
+    </h3></ion-item
+  >
   <ion-item>
     <ion-label>Registration Number</ion-label>
     <ion-input
@@ -16,7 +25,9 @@
     ></ion-input>
   </ion-item>
 
-  <ion-button (click)="searchCars()">Search Car</ion-button>
+  <ion-button expand="block" color="danger" (click)="searchCars()"
+    >Search Car</ion-button
+  >
 
   <ul style="list-style-type: none">
     <li *ngFor="let st of filteredData">

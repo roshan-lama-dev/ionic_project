@@ -17,5 +17,10 @@ export class Tab2Page {
     } else {
       this.message = '';
     }
+    this.message = '';
+  }
+  displayHelp() {
+    this.message =
+      'You can view the list of the car data from the database in this page';
   }
 }

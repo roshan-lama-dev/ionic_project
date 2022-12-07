@@ -1,10 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Car list </ion-title>
+    <ion-title> Displaying Car list </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="tab2-bg">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Car List</ion-title>
@@ -15,6 +15,10 @@
   <!-- sregistrationNum: string; scarMake: string; scarModel: string; scarYear:
   string; scarOdometer: string; -->
   <ion-item>{{message}}</ion-item>
+
+  <ion-button color="danger" size="small" (click)="displayHelp()"
+    ><ion-icon slot="icon-only" name="help"></ion-icon>Help</ion-button
+  >
   <ul style="list-style-type: none">
     <li *ngFor="let st of data">
       <ion-row style="border-bottom: groove">

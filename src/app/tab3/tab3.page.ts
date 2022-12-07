@@ -22,7 +22,10 @@ export class Tab3Page {
   message: string = '';
 
   constructor(private cars: CarServices) {}
-
+  displayHelp() {
+    this.message =
+      'You can use this form to add the car data into the database';
+  }
   addToDatabase() {
     // if (this.regNum == '') {
     //   this.message = 'Please enter the required registration number';

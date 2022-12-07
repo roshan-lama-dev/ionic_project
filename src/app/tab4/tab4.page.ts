@@ -15,18 +15,20 @@ export class Tab4Page implements OnInit {
   constructor(cars: CarServices) {
     this.unFiltereddata = cars.getCars();
   }
+
+  displayHelp() {
+    this.message =
+      'You can search the car data by entering the car registration number';
+  }
   searchCars() {
+    this.filteredData = [];
     console.log('button clicked');
     for (let i = 0; i < this.unFiltereddata.length; i++) {
       if (this.unFiltereddata[i].sregistrationNum == this.searchReg) {
         this.message = '';
-        this.filteredData = [];
+
         this.filteredData.push(this.unFiltereddata[i]);
         this.searchReg = '';
-      } else {
-        this.searchReg = '';
-        this.filteredData = [];
-        this.message = "This car doesn't exist";
       }
     }
   }

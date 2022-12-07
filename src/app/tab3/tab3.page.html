@@ -4,14 +4,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" class="back">
   <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header> -->
+  <ion-item class="add-message">{{message}}</ion-item>
 
-  <ion-item class="add-message"> <h4>{{message}}</h4></ion-item>
+  <ion-button color="danger" size="small" (click)="displayHelp()"
+    ><ion-icon slot="icon-only" name="help"></ion-icon>Help</ion-button
+  >
+
   <ion-item>
     <ion-label>Registration Number</ion-label>
     <ion-input
@@ -93,7 +97,7 @@
   <ion-item>
     <ion-label>Rental Price</ion-label>
     <ion-input
-      placeholder="Enter Car Odometer"
+      placeholder="Enter Rental Price"
       [(ngModel)]="carRental"
     ></ion-input>
   </ion-item>
@@ -116,5 +120,7 @@
     </ion-radio-group>
   </ion-list>
 
-  <ion-button (click)="addToDatabase()">Add to Database</ion-button>
+  <ion-button color="success" expand="block" (click)="addToDatabase()"
+    >Add to Database</ion-button
+  >
 </ion-content>

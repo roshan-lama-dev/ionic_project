@@ -22,6 +22,10 @@ export class Tab5Page implements OnInit {
 
   ngOnInit() {}
 
+  displayHelp() {
+    this.message = 'You can list the car that are currently available';
+  }
+
   displayNotCars() {
     console.log(this.carData);
     for (let i = 0; i < this.carData.length; i++) {

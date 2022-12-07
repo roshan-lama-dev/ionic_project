@@ -5,13 +5,19 @@
 </ion-header>
 
 <ion-content>
+  <ion-item class="add-message">{{message}}</ion-item>
+
+  <ion-button color="danger" size="small" (click)="displayHelp()"
+    ><ion-icon slot="icon-only" name="help"></ion-icon>Help</ion-button
+  >
   <ion-item><h3>Displaying not currently rented cars</h3></ion-item>
 
-  <ion-button (click)="displayNotCars()">Search the not rented cars</ion-button>
+  <ion-button (click)="displayNotCars()" expand="block" color="dark"
+    >Search the not rented cars</ion-button
+  >
 
-  <ion-item>{{message}}</ion-item>
-  <ul style="list-style-type: none">
-    <li *ngFor="let st of filterCars">
+  <ion-list style="list-style-type: none">
+    <ion-item *ngFor="let st of filterCars">
       <ion-row style="border-bottom: groove">
         <ion-col col-4>
           <ion-label>Registration Number</ion-label>
@@ -90,6 +96,6 @@
       <!-- Registration Number=<br />
       Car Make={{st.scarMake}} Car Model={{st.scarModel}} Car
       Odometer={{st.scarOdometer}} -->
-    </li>
-  </ul>
+    </ion-item>
+  </ion-list>
 </ion-content>
