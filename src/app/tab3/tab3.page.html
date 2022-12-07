@@ -11,87 +11,81 @@
     </ion-toolbar>
   </ion-header> -->
 
+  <ion-item class="add-message"> <h4>{{message}}</h4></ion-item>
   <ion-item>
     <ion-label>Registration Number</ion-label>
     <ion-input
+      type="number"
       placeholder="Enter Registration Number"
       [(ngModel)]="regNum"
     ></ion-input>
-  </ion-item>
-  <ion-item>
     <ion-label>Car Make</ion-label>
     <ion-input placeholder="Enter Car Make" [(ngModel)]="carMake"></ion-input>
   </ion-item>
+
   <ion-item>
     <ion-label>Car Model</ion-label>
     <ion-input placeholder="Enter Car Model" [(ngModel)]="carModel"></ion-input>
-  </ion-item>
-  <ion-item>
     <ion-label>Car Year</ion-label>
-    <ion-input placeholder="Enter Car Year" [(ngModel)]="carYear"></ion-input>
+    <ion-input
+      type="number"
+      placeholder="Enter Car Year"
+      [(ngModel)]="carYear"
+    ></ion-input>
   </ion-item>
+
   <ion-item>
     <ion-label>Car Odometer</ion-label>
     <ion-input
+      type="number"
       placeholder="Enter Car Odometer"
       [(ngModel)]="carOdometer"
     ></ion-input>
   </ion-item>
+  <!-- Transmission -->
   <ion-list>
-    <ion-radio-group value="" [(ngModel)]="regNum">
-      <ion-label>Choose Transmission</ion-label>
+    <ion-radio-group value="" [(ngModel)]="carTransmission">
       <ion-item>
-        <ion-radio
-          slot="end"
-          value="grapes"
-          *ngFor="let cartype of cartypes"
-          [value]="cartype"
-          >{{cartype}}</ion-radio
-        >
+        <ion-label>Select Transmission</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Automatic</ion-label>
+        <ion-radio slot="end" value="Automatic"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Manual</ion-label>
+        <ion-radio slot="end" value="Manual"></ion-radio>
       </ion-item>
     </ion-radio-group>
   </ion-list>
 
   <!-- Body type -->
   <ion-list>
-    <ion-radio-group value="">
-      <ion-label>Choose Body Type</ion-label>
+    <ion-radio-group value="" [(ngModel)]="carBody">
+      <ion-item>
+        <ion-label>Select Body Type</ion-label>
+      </ion-item>
       <ion-item>
         <ion-label>Hatch</ion-label>
-        <ion-radio slot="end" value="grapes" [(ngModel)]="regNum"></ion-radio>
+        <ion-radio slot="end" value="Hatch"></ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>Sadan</ion-label>
-        <ion-radio
-          slot="end"
-          value="strawberries"
-          [(ngModel)]="regNum"
-        ></ion-radio>
+        <ion-label>Sedan</ion-label>
+        <ion-radio slot="end" value="Sedan"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label>SUV</ion-label>
-        <ion-radio
-          slot="end"
-          value="strawberries"
-          [(ngModel)]="regNum"
-        ></ion-radio>
+        <ion-radio slot="end" value="SUV"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label>Van</ion-label>
-        <ion-radio
-          slot="end"
-          value="strawberries"
-          [(ngModel)]="regNum"
-        ></ion-radio>
+        <ion-radio slot="end" value="Van"></ion-radio>
       </ion-item>
       <ion-item>
-        <ion-label>Ute</ion-label>
-        <ion-radio
-          slot="end"
-          value="strawberries"
-          [(ngModel)]="regNum"
-        ></ion-radio>
+        <ion-label>UTE</ion-label>
+        <ion-radio slot="end" value="UTE"></ion-radio>
       </ion-item>
     </ion-radio-group>
   </ion-list>
@@ -100,25 +94,24 @@
     <ion-label>Rental Price</ion-label>
     <ion-input
       placeholder="Enter Car Odometer"
-      [(ngModel)]="regNum"
+      [(ngModel)]="carRental"
     ></ion-input>
   </ion-item>
   <!-- Currently rent -->
   <ion-list>
-    <ion-radio-group value="">
-      <ion-label>Currently in Rent</ion-label>
+    <ion-radio-group value="" [(ngModel)]="carRent">
+      <ion-item>
+        <ion-label>Currently in Rent</ion-label>
+      </ion-item>
+
       <ion-item>
         <ion-label>Yes</ion-label>
-        <ion-radio slot="end" value="grapes" [(ngModel)]="regNum"></ion-radio>
+        <ion-radio slot="end" value="Yes"></ion-radio>
       </ion-item>
 
       <ion-item>
         <ion-label>No</ion-label>
-        <ion-radio
-          slot="end"
-          value="strawberries"
-          [(ngModel)]="regNum"
-        ></ion-radio>
+        <ion-radio slot="end" value="No"></ion-radio>
       </ion-item>
     </ion-radio-group>
   </ion-list>

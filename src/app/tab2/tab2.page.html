@@ -10,15 +10,91 @@
       <ion-title size="large">Car List</ion-title>
     </ion-toolbar>
   </ion-header>
-  <h3>Student List</h3>
+  <h3>Car List</h3>
 
   <!-- sregistrationNum: string; scarMake: string; scarModel: string; scarYear:
   string; scarOdometer: string; -->
+  <ion-item>{{message}}</ion-item>
   <ul style="list-style-type: none">
     <li *ngFor="let st of data">
-      Registration Number={{st.sregistrationNum}}<br />
+      <ion-row style="border-bottom: groove">
+        <ion-col col-4>
+          <ion-label>Registration Number</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label>{{st.sregistrationNum}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: groove">
+        <ion-col col-4>
+          <ion-label>Car Make</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label>{{st.scarMake}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: groove">
+        <ion-col col-4>
+          <ion-label>Car Model</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label>{{st.scarModel}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: groove">
+        <ion-col col-4>
+          <ion-label>Car Year</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label>{{st.scarYear}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: groove">
+        <ion-col col-4>
+          <ion-label>Car Odometer</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label>{{st.scarOdometer}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: groove">
+        <ion-col col-4>
+          <ion-label>Car Transmission</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label>{{st.scarTransmission}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: groove">
+        <ion-col col-4>
+          <ion-label>Car Body Type</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label>{{st.scarBodyType}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: groove">
+        <ion-col col-4>
+          <ion-label>Car Rental Price</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label>{{st.scarRentalPrice}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: groove">
+        <ion-col col-4>
+          <ion-label>Currently In Rent</ion-label>
+        </ion-col>
+        <ion-col col-4>
+          <ion-label>{{st.scarRent}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <br />
+      <br />
+      <br />
+      <!-- Registration Number=<br />
       Car Make={{st.scarMake}} Car Model={{st.scarModel}} Car
-      Odometer={{st.scarOdometer}}
+      Odometer={{st.scarOdometer}} -->
     </li>
   </ul>
 

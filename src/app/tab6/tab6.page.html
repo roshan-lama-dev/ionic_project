@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>tab6</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label> Delete Cars</ion-label>
+  <ion-item>
+    <h4>{{message}}</h4>
+  </ion-item>
+  <ion-item>
+    <ion-label
+      >Enter the Registration number of the car to be deleted</ion-label
+    >
+    <ion-input
+      placeholder="Enter Car Registration"
+      [(ngModel)]="carDeleteReg"
+    ></ion-input>
+  </ion-item>
+
+  <ion-button (click)="dodelete()">Delete Cars from the database</ion-button>
+  <ion-button (click)="doedit()">Edit Cars</ion-button>
+  <ion-button (click)="doupdate()">Update Cars</ion-button>
+</ion-content>

@@ -8,7 +8,14 @@ import { Cars, CarServices } from '../car.service';
 })
 export class Tab2Page {
   data: Cars[];
-  constructor(private cars: CarServices) {
-    this.data = cars.getCars();
+  message: string = '';
+  constructor(private c: CarServices) {
+    this.data = c.getCars();
+
+    if (this.data.length == 0) {
+      this.message = 'Please enter car information using the add cars tab';
+    } else {
+      this.message = '';
+    }
   }
 }
