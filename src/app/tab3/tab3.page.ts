@@ -8,8 +8,7 @@ import { CarServices, Cars } from '../car.service';
 })
 export class Tab3Page {
   // creating sting array for the type
-  cartypes: string[] = ['Automatic', 'Manual'];
-  seasons: string[] = ['Automatic', 'Manual'];
+
   regNum: string = '';
   carMake: string = '';
   carModel: string = '';
@@ -26,49 +25,52 @@ export class Tab3Page {
     this.message =
       'You can use this form to add the car data into the database';
   }
-  addToDatabase() {
-    // if (this.regNum == '') {
-    //   this.message = 'Please enter the required registration number';
-    //   return;
 
+  // Function to  add the entered information to the array
+  addToDatabase() {
+    // checking if the input is empty or not
+    if (this.regNum == '') {
+      this.message = 'Please enter the required registration number';
+      return;
+    }
+    // checking if the car registration is already in the database or not
     if (this.cars.isPresentFor(this.regNum)) {
       this.message = 'Please enter different car information';
       return;
     }
-
-    // }
-    // if (this.carMake == '') {
-    //   this.message = 'Please enter the required car make';
-    //   return;
-    // }
-    // if (this.carModel == '') {
-    //   this.message = 'Please enter the required car model';
-    //   return;
-    // }
-    // if (this.carYear == '') {
-    //   this.message = 'Please enter the required car year';
-    //   return;
-    // }
-    // if (this.carOdometer == '') {
-    //   this.message = 'Please enter the required car odometer';
-    //   return;
-    // }
-    // if (this.carTransmission == '') {
-    //   this.message = 'Please select the required car transmission';
-    //   return;
-    // }
-    // if (this.carBody == '') {
-    //   this.message = 'Please select the required car body';
-    //   return;
-    // }
-    // if (this.carRental == '') {
-    //   this.message = 'Please enter the required car rental price';
-    //   return;
-    // }
-    // if (this.carRent == '') {
-    //   this.message = 'Please enter the required car rental status';
-    //   return;
-    // }
+    // conditional checking to check whether the input field are empty or not and displaying message accordingly
+    if (this.carMake == '') {
+      this.message = 'Please enter the required car make';
+      return;
+    }
+    if (this.carModel == '') {
+      this.message = 'Please enter the required car model';
+      return;
+    }
+    if (this.carYear == '') {
+      this.message = 'Please enter the required car year';
+      return;
+    }
+    if (this.carOdometer == '') {
+      this.message = 'Please enter the required car odometer';
+      return;
+    }
+    if (this.carTransmission == '') {
+      this.message = 'Please select the required car transmission';
+      return;
+    }
+    if (this.carBody == '') {
+      this.message = 'Please select the required car body';
+      return;
+    }
+    if (this.carRental == '') {
+      this.message = 'Please enter the required car rental price';
+      return;
+    }
+    if (this.carRent == '') {
+      this.message = 'Please enter the required car rental status';
+      return;
+    }
 
     let tempArray: Cars = {
       sregistrationNum: this.regNum,

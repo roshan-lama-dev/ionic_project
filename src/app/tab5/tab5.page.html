@@ -16,8 +16,8 @@
     >Search the not rented cars</ion-button
   >
 
-  <ion-list style="list-style-type: none">
-    <ion-item *ngFor="let st of filterCars">
+  <ul style="list-style-type: none">
+    <li *ngFor="let st of filterCars">
       <ion-row style="border-bottom: groove">
         <ion-col col-4>
           <ion-label>Registration Number</ion-label>
@@ -96,6 +96,6 @@
       <!-- Registration Number=<br />
       Car Make={{st.scarMake}} Car Model={{st.scarModel}} Car
       Odometer={{st.scarOdometer}} -->
-    </ion-item>
-  </ion-list>
+    </li>
+  </ul>
 </ion-content>

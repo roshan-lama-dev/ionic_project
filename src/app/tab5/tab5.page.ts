@@ -11,13 +11,8 @@ export class Tab5Page implements OnInit {
   carData: Cars[];
   message: string = '';
   constructor(private carray: CarServices) {
-    // this.filterCars = carray.filteredCars();
     this.carData = carray.getCars();
     console.log(carray.filteredCars());
-
-    // if (this.filterCars.length == 0) {
-    //   this.message = 'Please enter car information using the add cars tab';
-    // }
   }
 
   ngOnInit() {}
@@ -25,21 +20,22 @@ export class Tab5Page implements OnInit {
   displayHelp() {
     this.message = 'You can list the car that are currently available';
   }
-
+  // function to display the cars that are not rented
   displayNotCars() {
-    console.log(this.carData);
+    // for loop loops through the entire car data
     for (let i = 0; i < this.carData.length; i++) {
+      // filter function filters the car array and return where the rented status of the car is no to the filtercars array
       this.filterCars = this.carData.filter((item) => {
         return item.scarRent == 'No';
-        console.log(item.scarRent);
       });
       console.log(this.filterCars);
-      // console.log(this.carData.);
-      if (this.carData[i].scarRent == 'No') {
-        this.filterCars = this.carData;
-      } else {
-        return;
-      }
+
+      // this if con
+      // if (this.carData[i].scarRent == 'No') {
+      //   this.filterCars = this.carData;
+      // } else {
+      //   return;
+      // }
     }
   }
 }

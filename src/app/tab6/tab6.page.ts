@@ -22,7 +22,6 @@ export class Tab6Page implements OnInit {
   carDeleteReg: string = '';
 
   data: Cars[];
-  // message: string = '';
 
   constructor(private cars: CarServices) {
     this.data = cars.getCars();
@@ -47,6 +46,7 @@ export class Tab6Page implements OnInit {
   displayHelp() {
     this.message = 'You can view, edit and delete the car data in this page';
   }
+  // function to display the updated information
   updateDisplay() {
     this.regNum = this.data[this.pos].sregistrationNum;
     this.carMake = this.data[this.pos].scarMake;
@@ -58,7 +58,7 @@ export class Tab6Page implements OnInit {
     this.carRental = this.data[this.pos].scarRentalPrice;
     this.carRent = this.data[this.pos].scarRent;
   }
-
+  // displays the next element from the array
   doNext() {
     if (this.pos == 0) {
       this.updateDisplay();
@@ -70,6 +70,8 @@ export class Tab6Page implements OnInit {
       this.updateDisplay();
     }
   }
+
+  // removes the element from the array
   doDelete() {
     if (window.confirm('Do you want to remove the car from the Database')) {
       if (this.pos < 0) {
@@ -77,6 +79,7 @@ export class Tab6Page implements OnInit {
         this.message = 'No records found';
         return;
       }
+      // splice remove the element from the array, by taking the index position of the element
       this.data.splice(this.pos, 1);
       if (this.data.length == this.pos) {
         this.pos--;
@@ -88,6 +91,8 @@ export class Tab6Page implements OnInit {
       }
     }
   }
+
+  // displays the previous record from the array
   doPrevious() {
     if (this.pos == 0) {
       this.updateDisplay();
@@ -99,6 +104,8 @@ export class Tab6Page implements OnInit {
       this.updateDisplay();
     }
   }
+
+  // function to save the edited car information
   doSave() {
     if (this.pos >= 0) {
       if (this.carMake == '') {
@@ -134,6 +141,8 @@ export class Tab6Page implements OnInit {
         return;
       }
 
+      // updating the input field with the edited information
+
       this.data[this.pos].sregistrationNum = this.regNum;
       this.data[this.pos].scarMake = this.carMake;
       this.data[this.pos].scarBodyType = this.carBody;
@@ -147,25 +156,4 @@ export class Tab6Page implements OnInit {
       this.message = 'Please select a car information first';
     }
   }
-  // dodelete() {
-  //   console.log(this.data);
-  //   console.log(this.carDeleteReg);
-
-  //   for (let i = 0; i < this.data.length; i++) {
-  //     if (this.data[i].sregistrationNum == this.carDeleteReg) {
-  //       if (window.confirm('Do you want to remove the car from the Database')) {
-  //         this.data.splice(i, 1);
-  //         this.message = 'The car is removed from the database';
-  //         console.log('success');
-  //         this.carDeleteReg = '';
-  //       }
-  //     }
-  //   }
-  // }
-  // doupdate() {
-  //   console.log('Clicked');
-  // }
-  // doedit() {
-  //   console.log('Clicked');
-  // }
 }
